@@ -27,4 +27,5 @@ curl -X POST http://localhost:1337/api/account/register/ -H 'Content-Type: appli
 ```
 
 ## Notes
-Fixer free tier only allows conversions from GPB to MXN.
+- Fixer free tier only allows conversions from GPB to MXN.
+- The fixer and banxico tokens are not included in the .env file.
