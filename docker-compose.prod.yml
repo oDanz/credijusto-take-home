@@ -1,0 +1,20 @@
+version: "3.10"
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "1337:80"
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+  web:
+    build:
+      context: .
+    command: gunicorn exchangeratesapi.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/code
+    expose:
+      - "8000"
+volumes:
+  .:
